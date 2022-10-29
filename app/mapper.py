@@ -4,7 +4,7 @@ def mapInput(value):
     if value == 'o':
         return 2
 
-    return 0
+    return 3
     
 def mapOutput(roundedValue):
     if roundedValue == 1:

@@ -1,12 +1,12 @@
 from keras.models import model_from_json
 
 def predict(X):
-    jsonFile = open("data/model.json",'r')
+    jsonFile = open("./data/model.json",'r')
     jsonModel = jsonFile.read()
     jsonFile.close()
 
     model = model_from_json(jsonModel)
-    model.load_weights("data/weights.h5")
+    model.load_weights("./data/weights.h5")
     
     model.compile(
         loss='binary_crossentropy',

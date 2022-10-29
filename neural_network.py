@@ -1,6 +1,4 @@
-import pandas as pd
-from keras.models import Sequential, Model,model_from_json
-from keras.layers.core import Dense
+from keras.models import model_from_json
 
 def predict(X):
     jsonFile = open("data/model.json",'r')

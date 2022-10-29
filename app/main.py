@@ -1,6 +1,6 @@
 from flask import Flask, request
-from mapper import mapInput, mapOutput
-from neural_network import predict
+from app.mapper import mapInput, mapOutput
+from app.neural_network import predict
 import numpy as np
 
 app = Flask(__name__)
@@ -28,6 +28,3 @@ def index():
         'output': output,
         'input': inputAsMatrix
     }
-
-if __name__ == '__main__':
-    app.run()

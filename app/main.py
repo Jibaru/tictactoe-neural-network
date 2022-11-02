@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, jsonify, make_response, request
 from app.mapper import mapInput, mapOutput
 from app.neural_network import predict
 import numpy as np
@@ -22,9 +22,10 @@ def index():
     output = predict(np.array([
         input,
     ]))
-    
-    return {
+    response = make_response(jsonify({
         'result': mapOutput(output['rounded']),
         'output': output,
         'input': inputAsMatrix
-    }
+    }))
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
